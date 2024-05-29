@@ -21,6 +21,9 @@ Upon launching the application, 10 capsule character templates will take in uniq
 **Modifying the project**
 
 To add more units, simply duplicate the Unit Gameobject in the hierarchy and the duplicated unit will automatically join the fight. Alternatively, users can create a new unit by dragging and dropping a Unit Prefab along with a weapon prefab slotted into the Unit's Weapon Holder.
+
+
+
 ![hierarchy](https://github.com/lmistades/CombatSystemTest/assets/50820284/2f90200d-800d-45fe-bcd4-faab7c823c41)
 
 
