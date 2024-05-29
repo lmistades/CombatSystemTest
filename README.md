@@ -2,7 +2,8 @@
  
 This repo contains a Unity 3D project exercise aimed at developing a decoupled combat system within 48 hours. The project features sample implementations for Scriptable Objects, UnityEvents, Interfaces, etc. To access the full project, you can either clone it using git or download as zip. You can also separately download the build.zip  located at the root folder to try the output Windows build.
 
-Libraries and Systems used:
+Libraries and Version used:
+- Unity 2022.3.30f1 LTS
 - TextMeshPro
 - Unity Navmesh
 - Unity Probuilder
