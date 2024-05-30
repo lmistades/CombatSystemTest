@@ -35,6 +35,9 @@ To perform more customization, users can modify existing Scriptable Objects or c
 
 
 **Future Development**
+
+
+
 This simple prototype can serve as a template for scaled development by further expanding on existing systems like the OnDeath UnityEvent to set different conditions when a unit is destroyed, or the IDamageable interface to handle different damage recipients and apply various effects. Apart from these, the application can also benefit from other much needed enhancements like object pooling for instantiated bullets and/or enemies, unique hash/ids for sorting large numbers of Scriptable Objects, better models and animations, post-processing effects, etc.
 
 
