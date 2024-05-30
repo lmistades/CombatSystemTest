@@ -17,7 +17,8 @@ public class UnitStats : MonoBehaviour, IDamageable
         transform.GetComponent<NavMeshAgent>().speed = unit.movementSpeed;
         health = unit.maxHealth;
         transform.GetComponent<Renderer>().material = unit.material;
-        onDeath.AddListener(GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>().ReduceUnits);
+        //onDeath.AddListener(GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleManager>().ReduceUnits);
+        onDeath.AddListener(BattleManager.Instance.GetComponent<BattleManager>().ReduceUnits);
         unitName = unit.name;
     }
 

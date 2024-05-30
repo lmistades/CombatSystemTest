@@ -9,7 +9,12 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private int unitCount;
     public string result;
     [SerializeField] private GameObject winner;
+    public static BattleManager Instance;
 
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         //find units and add to static list.
