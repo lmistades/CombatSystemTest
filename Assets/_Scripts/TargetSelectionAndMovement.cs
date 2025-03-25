@@ -26,10 +26,7 @@ public class TargetSelectionAndMovement : MonoBehaviour
         {
             FindRandomTarget();
             
-        }
-        
-        
-        
+        }    
 
     }
 
@@ -45,7 +42,6 @@ public class TargetSelectionAndMovement : MonoBehaviour
             randomTarget = BattleManager.unitsList[Random.Range(0,BattleManager.unitsList.Count)];
             target = randomTarget;
         }
-
         
     }
 

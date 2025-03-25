@@ -9,26 +9,26 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private int unitCount;
     public string result;
     [SerializeField] private GameObject winner;
-    public static BattleManager Instance;
 
-    void Awake()
-    {
-        Instance = this;
-    }
+    private GameObject resultUI;
+    private GameObject unitsParent;
+
     void Start()
     {
         //find units and add to static list.
         unitsList.AddRange(GameObject.FindGameObjectsWithTag("Unit"));
         unitCount = unitsList.Count;
         Debug.Log(unitCount);
+        resultUI = GameObject.FindGameObjectWithTag("UI");
+        unitsParent = GameObject.FindGameObjectWithTag("UnitsParent");
+
     }
 
     void LateUpdate()
     {
-        //when only 1 unit remains, display result and stop shooting
         if(unitCount == 1)
         {
-            winner = GameObject.FindGameObjectWithTag("Unit");
+            winner = unitsParent.transform.GetChild(0).gameObject;
             result = winner?.GetComponent<UnitStats>().unitName + " WINS!";
             winner.transform.GetChild(0).GetChild(0).GetComponent<Weapon>().CancelInvoke("Shoot");
             DisplayResult();
@@ -43,6 +43,7 @@ public class BattleManager : MonoBehaviour
         {
             return;
         }
+       
     }
 
     //acts as listener for OnDeath UnityEvent
@@ -50,11 +51,12 @@ public class BattleManager : MonoBehaviour
     {
         unitCount--;
         Debug.Log(unitCount);
+
     }
 
     void DisplayResult()
     {
-        GameObject.FindGameObjectWithTag("UI").GetComponent<UIController>().resultText.text = result + "                           press space to restart.";
+        resultUI.GetComponent<UIController>().resultText.text = result + "                           press space to restart.";
         if(Input.GetKeyDown(KeyCode.Space))
         {
             unitsList.Clear();
@@ -65,7 +67,7 @@ public class BattleManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+       
     }
 
-    
 }

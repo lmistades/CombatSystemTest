@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        if(transform.position.y < -20f || transform.position.z >10f || transform.position.z <-10f || transform.position.x >20f || transform.position.x <-20f)
+        if(transform.position.y < -20f)
         {
             Destroy(this.gameObject);
         }
